@@ -100,7 +100,8 @@ img{
     margin-left: 0.5em;
 }
 .hero__rating-text{
-    color:var(--d-magenta);    
+    color:var(--d-magenta); 
+    font-size: 0.87rem;   
     font-weight:700;
     margin:0;
 }
@@ -108,6 +109,7 @@ img{
     padding: 5em 0 0;
 }
 .review{
+    font-size: 0.87rem;
     background-color:var(--d-magenta);
     color: var(--white);
     padding:3em 2em;
