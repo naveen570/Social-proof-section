@@ -1,0 +1,186 @@
+/* ## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+Very Dark Magenta: hsl(300, 43%, 22%)
+Soft Pink: hsl(333, 80%, 67%)
+
+### Neutral
+
+Dark Grayish Magenta: hsl(303, 10%, 53%)
+Light Grayish Magenta: hsl(300, 24%, 96%)
+White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+### Font
+
+- Family: [Spartan](https://fonts.google.com/specimen/Spartan)
+- Weights: 400, 500, 700 */
+*,::after,::before{
+    box-sizing: border-box;
+    margin:0;    
+}
+:root{
+    font-size: 15px; 
+    --d-magenta:hsl(300, 43%, 22%);
+    --g-magenta:hsl(303, 10%, 53%);
+    --l-magenta:hsl(300, 24%, 96%);
+    --pink:hsl(333, 80%, 67%);
+    --white:hsl(0, 0%, 100%);
+    --move: -1.875rem;
+}
+h1,h2,p{
+    margin-top:0;
+}
+body{
+    margin:0;
+    line-height: 1.6;
+    font-family: 'Spartan', sans-serif;   
+    position: relative;    
+    background-image: url(images/bg-pattern-top-mobile.svg),
+                      url(images/bg-pattern-bottom-mobile.svg);
+    background-position: top left, right bottom;   
+    background-repeat: no-repeat, no-repeat;
+}
+/* body::after{
+    content:url(images/bg-pattern-bottom-mobile.svg);
+    position: absolute;
+    bottom:0;
+    right: 0;
+    left:0;
+    z-index: -1;
+} */
+img{
+    max-width: 100%;
+}
+.container{
+    width:85%;
+    max-width: 1200px;
+    margin:0 auto;
+    /* outline: 5px solid red; */
+}
+.hero{    
+    padding:6em 0 2em;
+    text-align: center;    
+}
+.hero__title{    
+    font-size: clamp(2rem, 5vw + 0.5rem, 3rem);
+    color:var(--d-magenta);
+    line-height: 1.1;
+    margin:0 0 0.3em 0;
+}
+.hero__text{    
+    font-weight: 500;    
+    color:var(--g-magenta);
+    margin:0 0 2.5rem 0;
+}
+.hero__rating{    
+    background-color:var(--l-magenta);
+    padding: 1.2em 0 ;
+    margin: 0 0 1.2rem 0;
+    border:0;
+    border-radius:0.5em;    
+}
+.rating-icons{
+    margin-bottom: 0.5em;
+}
+.rating-icons img +  img {    
+    margin-left: 0.5em;
+}
+.hero__rating-text{
+    color:var(--d-magenta);    
+    font-weight:700;
+    margin:0;
+}
+.reviews{
+    padding: 5em 0 0;
+}
+.review{
+    background-color:var(--d-magenta);
+    color: var(--white);
+    padding:3em 2em;
+    border:0;
+    border-radius: 0.8em; 
+    margin:0 0 1.5em 0;   
+}
+.review .row{
+    display: flex;
+    margin-bottom:2em;
+}
+.review__profile{
+    height:3.33rem;
+    margin-right: 2em;
+    border-radius: 50%;
+}
+.review__confirm{
+    color:var(--pink);
+}
+footer{
+    text-align:center;
+    padding:2em;
+}
+@media(min-width:376px){
+    body{
+        background-image: url(images/bg-pattern-top-desktop.svg),
+                          url(images/bg-pattern-bottom-desktop.svg);
+    }
+}
+@media (min-width:1000px){
+    
+    .row{
+        display: flex;
+        justify-content: space-between;
+    }
+    .hero__content{
+        text-align: left;
+        width:40%;
+    }
+    .hero__ratings{
+        width: 45%;       
+    }
+    .hero__rating{
+        display: flex;                       
+    }
+    .rating-icons{
+        margin: 0 2rem;
+    }
+    .hero__rating-text{
+        align-self: center;
+    }
+    .hero__rating:nth-of-type(2){
+        transform: translateX(calc(var(--move) * 2));
+      }
+    .hero__rating:nth-of-type(1){
+    transform: translateX(calc(var(--move) * 4));
+    }
+    .reviews{
+        display: flex;
+        justify-content: space-between;
+    }
+    .review{
+        width:32%;
+        max-width: 25rem;
+        margin:0 ;  
+    }
+    .review  .row{
+        justify-content: flex-start;
+    }
+    .review:nth-of-type(1){
+        transform: translateY(calc(var(--move) * 2));
+    }
+    .review:nth-of-type(2){
+        transform: translateY(var(--move));
+    }
+}
